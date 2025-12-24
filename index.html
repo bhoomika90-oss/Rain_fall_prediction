@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rainfall Prediction</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    .container {
+      width: 500px;
+      margin: 0 auto;
+    }
+    .form-control {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Rainfall Prediction</h1>
+    <form action="/predict" method="post">
+      <div class="row">
+        <div class="col-md-12">
+          <label for="maxtemp">Maximum Temperature:</label>
+          <input type="number" class="form-control" id="maxtemp" name="maxtemp" step="0.01" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label for="temperature">Temperature:</label>
+          <input type="number" class="form-control" id="temperature" name="temperature" step="0.01" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label for="mintemp">Minimum Temperature:</label>
+          <input type="number" class="form-control" id="mintemp" name="mintemp" step="0.01" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label for="dewpoint">Dewpoint:</label>
+          <input type="number" class="form-control" id="dewpoint" name="dewpoint" step="0.01" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label for="sunshine">Sunshine:</label>
+          <input type="number" class="form-control" id="sunshine" name="sunshine" step="0.01" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label for="windspeed">Wind Speed:</label>
+          <input type="number" class="form-control" id="windspeed" name="windspeed" step="0.01" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary">Predict</button>
+        </div>
+      </div>
+    </form>
+    <br>
+    <div class="result">
+      {% if prediction %}
+        <p>Prediction: {{ prediction }}</p>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>
