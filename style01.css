@@ -1,0 +1,11 @@
+body {
+    background: linear-gradient(135deg, #3498db, #f1c40f); /* Blue and yellow gradient */
+    font-family: 'Poppins', sans-serif;
+    color: #fff; /* White font color for better readability */
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
